@@ -1,43 +1,49 @@
-# Astro Starter Kit: Minimal
+# ./inventário
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Site de apresentação do projeto **./inventário** — Sistema Automatizado de Controle de Estoque com RFID.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Desenvolvido para a disciplina de **Oficina de Integração 2** do curso de Engenharia de Computação da **UTFPR** (2026), sob orientação dos professores César M. Vargas Benítez e Daniel Rossato.
 
-## 🚀 Project Structure
+## Sobre o projeto
 
-Inside of your Astro project, you'll see the following folders and files:
+O ./inventário resolve o problema do controle manual de estoque em pequenos negócios, combinando leitura RFID e medição por peso para automatizar o inventário em tempo real. O hardware utiliza ESP32 + leitor RC522 + célula de carga HX711, e o pagamento é integrado via Pix com a API do Mercado Pago.
+
+## Links
+
+- [Site hospedado no Vercel](https://oficinas-web-site.vercel.app/)
+
+## Equipe
+
+| Nome | Papel |
+| :--- | :---- |
+| Enzo Westphal Tacla | Documentação & Integração |
+| Felipe Dias Peixoto | Hardware & Firmware |
+| João Pedro Veloso | Frontend & Backend |
+
+## Estrutura do site
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── layouts/
+│   └── Layout.astro       # Layout base com Navbar e Footer
+├── components/
+│   ├── Navbar.astro
+│   └── Footer.astro
+└── pages/
+    ├── index.astro         # Página inicial (hero + destaques)
+    ├── sobre.astro         # Contexto, motivação, objetivos e metodologia
+    ├── equipe.astro        # Membros da equipe
+    ├── funcionalidades.astro  # Funcionalidades do sistema
+    ├── resultados.astro    # Métricas, screenshots e demo
+    └── contato.astro       # Links do projeto e contatos
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Comandos
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Comando           | Ação                                        |
+| :---------------- | :------------------------------------------ |
+| `npm install`     | Instala as dependências                     |
+| `npm run dev`     | Inicia o servidor local em `localhost:4321` |
+| `npm run build`   | Gera o build de produção em `./dist/`       |
+| `npm run preview` | Visualiza o build antes de publicar         |
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
