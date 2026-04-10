@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Resultados" description="Demos, screenshots e métricas do projeto">
+  <section class="py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Resultados</h1>
+      <p class="text-gray-500 mb-12">O que foi alcançado ao longo do projeto.</p>
+
+      <!-- Métricas -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16">
+        {[
+          { valor: '0', label: 'Métrica 1' },
+          { valor: '0', label: 'Métrica 2' },
+          { valor: '0', label: 'Métrica 3' },
+          { valor: '0', label: 'Métrica 4' },
+        ].map(m => (
+          <div class="bg-indigo-50 rounded-xl p-5 text-center">
+            <p class="text-3xl font-bold text-indigo-600">{m.valor}</p>
+            <p class="text-gray-600 text-sm mt-1">{m.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Screenshots / Demo -->
+      <h2 class="text-xl font-semibold text-gray-900 mb-6">Screenshots / Demo</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
+        {[1, 2].map(n => (
+          <div class="bg-gray-100 rounded-xl aspect-video flex items-center justify-center text-gray-400 text-sm border border-dashed border-gray-300">
+            Screenshot {n} — adicione uma imagem aqui
+          </div>
+        ))}
+      </div>
+
+      <!-- Vídeo -->
+      <h2 class="text-xl font-semibold text-gray-900 mb-4">Vídeo de demonstração</h2>
+      <div class="bg-gray-100 rounded-xl aspect-video flex items-center justify-center text-gray-400 text-sm border border-dashed border-gray-300">
+        Incorpore o vídeo aqui (ex: iframe do YouTube)
+      </div>
+    </div>
+  </section>
+</Layout>

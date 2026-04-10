@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const funcionalidades = [
+  {
+    titulo: 'Funcionalidade 1',
+    descricao: 'Descreva o que esta funcionalidade faz e qual problema ela resolve para o usuário.',
+    status: 'Concluída',
+  },
+  {
+    titulo: 'Funcionalidade 2',
+    descricao: 'Descreva o que esta funcionalidade faz e qual problema ela resolve para o usuário.',
+    status: 'Concluída',
+  },
+  {
+    titulo: 'Funcionalidade 3',
+    descricao: 'Descreva o que esta funcionalidade faz e qual problema ela resolve para o usuário.',
+    status: 'Em progresso',
+  },
+];
+---
+
+<Layout title="Funcionalidades" description="O que foi desenvolvido no projeto">
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Funcionalidades</h1>
+      <p class="text-gray-500 mb-12">O que foi desenvolvido e entregue no projeto.</p>
+
+      <div class="space-y-6">
+        {funcionalidades.map((item, i) => (
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex items-start gap-4">
+            <span class="text-indigo-600 font-bold text-lg w-8 shrink-0">{i + 1}.</span>
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-semibold text-gray-900">{item.titulo}</h3>
+                <span class={`text-xs font-medium px-2 py-1 rounded-full ${
+                  item.status === 'Concluída'
+                    ? 'bg-green-100 text-green-700'
+                    : 'bg-yellow-100 text-yellow-700'
+                }`}>
+                  {item.status}
+                </span>
+              </div>
+              <p class="text-gray-600 text-sm">{item.descricao}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

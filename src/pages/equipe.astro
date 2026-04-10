@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const membros = [
+  {
+    nome: 'Nome do Membro 1',
+    papel: 'Papel / Função',
+    descricao: 'Breve descrição da contribuição deste membro no projeto.',
+    github: 'https://github.com/',
+  },
+  {
+    nome: 'Nome do Membro 2',
+    papel: 'Papel / Função',
+    descricao: 'Breve descrição da contribuição deste membro no projeto.',
+    github: 'https://github.com/',
+  },
+  {
+    nome: 'Nome do Membro 3',
+    papel: 'Papel / Função',
+    descricao: 'Breve descrição da contribuição deste membro no projeto.',
+    github: 'https://github.com/',
+  },
+];
+---
+
+<Layout title="Equipe" description="Conheça a equipe por trás do projeto">
+  <section class="py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Nossa Equipe</h1>
+      <p class="text-gray-500 mb-12">As pessoas que tornaram este projeto possível.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {membros.map(membro => (
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm text-center">
+            <div class="w-20 h-20 rounded-full bg-indigo-100 flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-indigo-600">
+              {membro.nome.charAt(0)}
+            </div>
+            <h3 class="font-semibold text-lg text-gray-900">{membro.nome}</h3>
+            <p class="text-indigo-600 text-sm font-medium mb-3">{membro.papel}</p>
+            <p class="text-gray-600 text-sm mb-4">{membro.descricao}</p>
+            <a href={membro.github} target="_blank" rel="noopener noreferrer"
+               class="text-sm text-gray-500 hover:text-indigo-600 transition-colors">
+              GitHub →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

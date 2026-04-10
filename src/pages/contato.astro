@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const links = [
+  { label: 'Repositório GitHub', href: 'https://github.com/', desc: 'Código fonte do projeto' },
+  { label: 'Relatório', href: '#', desc: 'Documento final do projeto' },
+  { label: 'Apresentação', href: '#', desc: 'Slides da apresentação' },
+];
+
+const emails = [
+  { nome: 'Nome do Membro 1', email: 'email1@exemplo.com' },
+  { nome: 'Nome do Membro 2', email: 'email2@exemplo.com' },
+];
+---
+
+<Layout title="Contato" description="Links e contatos do projeto">
+  <section class="py-16 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Contato</h1>
+      <p class="text-gray-500 mb-12">Links úteis e formas de entrar em contato com a equipe.</p>
+
+      <div class="space-y-10">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Links do Projeto</h2>
+          <div class="space-y-3">
+            {links.map(link => (
+              <a href={link.href} target="_blank" rel="noopener noreferrer"
+                 class="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-xl hover:border-indigo-300 hover:shadow-sm transition-all group">
+                <div>
+                  <p class="font-medium text-gray-900 group-hover:text-indigo-600 transition-colors">{link.label}</p>
+                  <p class="text-sm text-gray-500">{link.desc}</p>
+                </div>
+                <span class="text-gray-400 group-hover:text-indigo-600 transition-colors">→</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Equipe</h2>
+          <div class="space-y-3">
+            {emails.map(membro => (
+              <div class="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-xl">
+                <p class="font-medium text-gray-900">{membro.nome}</p>
+                <a href={`mailto:${membro.email}`} class="text-sm text-indigo-600 hover:underline">
+                  {membro.email}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+  <!-- Hero -->
+  <section class="bg-indigo-50 py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        Nome do Projeto
+      </h1>
+      <p class="text-xl text-gray-600 mb-8">
+        Breve descrição do projeto — o que foi desenvolvido, qual problema resolve e para quem.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/sobre" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+          Saiba mais
+        </a>
+        <a href="/resultados" class="border border-indigo-600 text-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-indigo-50 transition-colors">
+          Ver resultados
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destaques -->
+  <section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-bold text-center text-gray-900 mb-12">Destaques</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          { title: 'Destaque 1', desc: 'Descreva aqui um ponto forte ou funcionalidade principal do projeto.' },
+          { title: 'Destaque 2', desc: 'Descreva aqui outro diferencial ou resultado obtido pelo projeto.' },
+          { title: 'Destaque 3', desc: 'Descreva aqui mais um aspecto relevante ou impacto gerado.' },
+        ].map(item => (
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+            <h3 class="font-semibold text-lg text-gray-900 mb-2">{item.title}</h3>
+            <p class="text-gray-600 text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
