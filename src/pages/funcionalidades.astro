@@ -3,19 +3,39 @@ import Layout from '../layouts/Layout.astro';
 
 const funcionalidades = [
   {
-    titulo: 'Funcionalidade 1',
-    descricao: 'Descreva o que esta funcionalidade faz e qual problema ela resolve para o usuário.',
-    status: 'Concluída',
+    titulo: 'Leitura automática por RFID',
+    descricao: 'O leitor RC522 conectado ao ESP32 identifica produtos por etiquetas RFID passivas, eliminando a necessidade de input manual no momento da entrada ou saída de itens.',
+    status: 'Planejado',
   },
   {
-    titulo: 'Funcionalidade 2',
-    descricao: 'Descreva o que esta funcionalidade faz e qual problema ela resolve para o usuário.',
-    status: 'Concluída',
+    titulo: 'Medição de estoque por peso',
+    descricao: 'Célula de carga com módulo HX711 calcula automaticamente a quantidade de produto pela variação de peso, ideal para itens vendidos a granel.',
+    status: 'Planejado',
   },
   {
-    titulo: 'Funcionalidade 3',
-    descricao: 'Descreva o que esta funcionalidade faz e qual problema ela resolve para o usuário.',
-    status: 'Em progresso',
+    titulo: 'CRUD de inventário',
+    descricao: 'Interface web para cadastro, edição, consulta e remoção de produtos no estoque, com banco de dados SQLite para persistência local.',
+    status: 'Planejado',
+  },
+  {
+    titulo: 'Atualização automática de estoque',
+    descricao: 'O sistema atualiza as quantidades em tempo real à medida que produtos são lidos pelo RFID ou pesados, mantendo o inventário sempre sincronizado.',
+    status: 'Planejado',
+  },
+  {
+    titulo: 'Pagamento via Pix com QR Code dinâmico',
+    descricao: 'Integração com a API do Mercado Pago para geração de QR Code de cobrança no momento da transação, permitindo pagamento imediato via Pix.',
+    status: 'Planejado',
+  },
+  {
+    titulo: 'Modo administrador',
+    descricao: 'Acesso restrito por autenticação para operações sensíveis, como cadastro de novos produtos, ajuste de preços e visualização de relatórios.',
+    status: 'Planejado',
+  },
+  {
+    titulo: 'Reserva temporária de itens',
+    descricao: 'Durante uma transação em andamento, os itens selecionados ficam reservados temporariamente para evitar conflitos de estoque entre múltiplas operações simultâneas.',
+    status: 'Planejado',
   },
 ];
 ---

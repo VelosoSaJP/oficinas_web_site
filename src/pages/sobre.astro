@@ -6,39 +6,47 @@ import Layout from '../layouts/Layout.astro';
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-3xl font-bold text-gray-900 mb-4">Sobre o Projeto</h1>
-      <p class="text-gray-500 text-sm mb-10">Disciplina Oficinas 2 — [Nome da Instituição]</p>
+      <p class="text-gray-500 text-sm mb-10">Oficina de Integração 2 — Engenharia de Computação · UTFPR · 2026</p>
 
       <div class="space-y-10">
         <div>
           <h2 class="text-xl font-semibold text-gray-900 mb-3">Contexto</h2>
           <p class="text-gray-600 leading-relaxed">
-            Descreva aqui o contexto no qual o projeto foi desenvolvido. Em qual disciplina, semestre,
-            qual era o escopo geral da turma, etc.
+            O projeto foi desenvolvido na disciplina de Oficina de Integração 2 do curso de Engenharia de Computação
+            da UTFPR, sob orientação dos professores César M. Vargas Benítez e Daniel Rossato. O objetivo da disciplina
+            é integrar conhecimentos de hardware e software em um sistema funcional que resolva um problema real.
           </p>
         </div>
 
         <div>
           <h2 class="text-xl font-semibold text-gray-900 mb-3">Motivação</h2>
           <p class="text-gray-600 leading-relaxed">
-            Explique qual problema ou necessidade motivou a criação deste projeto.
-            Por que ele é relevante? Quem se beneficia?
+            O controle manual de estoque é lento, propenso a erros e ineficiente para pequenos negócios.
+            Contagens incorretas geram rupturas de estoque, perdas financeiras e retrabalho constante.
+            O <strong>./inventário</strong> nasceu para substituir esse processo por uma solução automatizada,
+            acessível e de baixo custo — combinando leitura RFID e medição por peso para tornar o inventário
+            preciso e em tempo real.
           </p>
         </div>
 
         <div>
           <h2 class="text-xl font-semibold text-gray-900 mb-3">Objetivos</h2>
           <ul class="list-disc list-inside text-gray-600 space-y-2">
-            <li>Objetivo principal do projeto</li>
-            <li>Objetivo secundário 1</li>
-            <li>Objetivo secundário 2</li>
+            <li>Desenvolver um sistema automatizado de controle de inventário com RFID e balança integrada</li>
+            <li>Permitir operações CRUD de produtos via interface web</li>
+            <li>Integrar pagamento via Pix com geração dinâmica de QR Code</li>
+            <li>Implementar modo administrador com acesso restrito</li>
+            <li>Manter o custo total do hardware abaixo de R$ 250,00</li>
           </ul>
         </div>
 
         <div>
           <h2 class="text-xl font-semibold text-gray-900 mb-3">Metodologia</h2>
           <p class="text-gray-600 leading-relaxed">
-            Descreva brevemente como o projeto foi conduzido: metodologia ágil, etapas,
-            ferramentas utilizadas, processo de desenvolvimento, etc.
+            O desenvolvimento foi dividido em camadas: firmware em C/C++ para o microcontrolador ESP32,
+            aplicação backend em Python ou Node.js com banco de dados SQLite, e interface web para gerenciamento.
+            O hardware utiliza o leitor RFID RC522 para identificação de produtos e uma célula de carga com módulo HX711
+            para medição de peso. A integração com a API do Mercado Pago viabiliza pagamentos via Pix diretamente pelo sistema.
           </p>
         </div>
       </div>

@@ -7,10 +7,10 @@ import Layout from '../layouts/Layout.astro';
   <section class="bg-indigo-50 py-20 px-4">
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-        Nome do Projeto
+        ./inventário
       </h1>
       <p class="text-xl text-gray-600 mb-8">
-        Breve descrição do projeto — o que foi desenvolvido, qual problema resolve e para quem.
+        Sistema automatizado de controle de estoque com tecnologia RFID e balança integrada — desenvolvido para eliminar erros do inventário manual em pequenos negócios.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/sobre" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
@@ -29,9 +29,9 @@ import Layout from '../layouts/Layout.astro';
       <h2 class="text-2xl font-bold text-center text-gray-900 mb-12">Destaques</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
-          { title: 'Destaque 1', desc: 'Descreva aqui um ponto forte ou funcionalidade principal do projeto.' },
-          { title: 'Destaque 2', desc: 'Descreva aqui outro diferencial ou resultado obtido pelo projeto.' },
-          { title: 'Destaque 3', desc: 'Descreva aqui mais um aspecto relevante ou impacto gerado.' },
+          { title: 'Leitura RFID Automática', desc: 'Identificação instantânea de produtos com leitor RC522 e ESP32, sem necessidade de input manual.' },
+          { title: 'Pagamento via Pix', desc: 'Geração dinâmica de QR Code integrada à API do Mercado Pago para cobrança automática.' },
+          { title: 'Estoque por Peso', desc: 'Célula de carga com módulo HX711 calcula quantidade automaticamente por variação de peso.' },
         ].map(item => (
           <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
             <h3 class="font-semibold text-lg text-gray-900 mb-2">{item.title}</h3>
