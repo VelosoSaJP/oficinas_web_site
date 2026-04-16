@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const atualizacoes = [
+  {
+    data: '10 de abril de 2025',
+    titulo: 'Apresentação do plano do projeto',
+    conteudo: 'Apresentamos o plano do projeto para a turma e professores. Foram definidos o escopo, as funcionalidades principais e a arquitetura do sistema.',
+  },
+];
+---
+
+<Layout title="Blog" description="Atualizações e progresso do projeto">
+  <section class="py-16 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Blog</h1>
+      <p class="text-gray-500 mb-12">Acompanhe as atualizações e o progresso do projeto.</p>
+
+      <div class="relative">
+        <!-- Linha vertical -->
+        <div class="absolute left-4 top-0 bottom-0 w-px bg-gray-200"></div>
+
+        <div class="space-y-10">
+          {atualizacoes.map(item => (
+            <div class="relative pl-12">
+              <!-- Bolinha na linha -->
+              <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center">
+                <div class="w-2 h-2 rounded-full bg-white"></div>
+              </div>
+
+              <p class="text-xs font-medium text-indigo-600 uppercase tracking-wide mb-1">{item.data}</p>
+              <h2 class="text-lg font-semibold text-gray-900 mb-2">{item.titulo}</h2>
+              <p class="text-gray-600 text-sm leading-relaxed">{item.conteudo}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
