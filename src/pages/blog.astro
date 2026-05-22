@@ -1,11 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import esquemaDesenhado from '../assets/image/esquema_desenhado_prot.jpeg';
+import schematicOficinas from '../assets/image/Schematic_Oficinas2_2026-05-21.png';
+import prototipo from '../assets/image/prototipo.jpeg';
+import protCima from '../assets/image/prot_cima.jpeg';
 
 const atualizacoes = [
   {
-    data: '10 de abril de 2025',
+    data: '10 de abril de 2026',
     titulo: 'Apresentação do plano do projeto',
     conteudo: 'Apresentamos o plano do projeto para a turma e professores. Foram definidos o escopo, as funcionalidades principais e a arquitetura do sistema.',
+  },
+  {
+    data: '08 de maio de 2026',
+    titulo: 'Desenvolvimento do esquemático físico e eletrônico',
+    conteudo: 'Desenvolvemos o esquemático físico e eletrônico do protótipo, definindo os componentes e a estrutura do circuito. Tamém projetamos a estrutura física para acomodar os componentes eletrônicos.',
+    imagens: [
+      { src: esquemaDesenhado, alt: 'Esquema desenhado' },
+      { src: schematicOficinas, alt: 'Schematic Oficinas 2' },
+    ],
+  },
+  {
+    data: '15 de Maio de 2026',
+    titulo: 'Conclusão do desenvolvimento do protótipo',
+    conteudo: 'Concluímos o desenvolvimento do protótipo, integrando todos os componentes eletrônicos e testando suas funcionalidades, além de ajustes finais na estrutura física.',
+    imagens: [
+      { src: prototipo, alt: 'Protótipo' },
+      { src: protCima, alt: 'Protótipo visto de cima' },
+    ],
   },
 ];
 ---
@@ -30,7 +53,19 @@ const atualizacoes = [
 
               <p class="text-xs font-medium text-indigo-600 uppercase tracking-wide mb-1">{item.data}</p>
               <h2 class="text-lg font-semibold text-gray-900 mb-2">{item.titulo}</h2>
-              <p class="text-gray-600 text-sm leading-relaxed">{item.conteudo}</p>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">{item.conteudo}</p>
+
+              {item.imagens && (
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                  {item.imagens.map(img => (
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      class="rounded-lg shadow-sm w-full h-auto object-cover"
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
