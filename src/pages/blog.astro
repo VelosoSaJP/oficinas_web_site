@@ -2,7 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import esquemaDesenhado from '../assets/image/esquema_desenhado_prot.jpeg';
-import schematicOficinas from '../assets/image/Schematic_Oficinas2_2026-05-21.png';
+import schematicOficina from '../assets/image/Schematic_Oficina_2026-05-21.png';
+import diagramaBlocos from '../assets/image/Diagramas Oficina.png';
+import montagemProtoboard from '../assets/image/protoboard.jpg';
 import prototipo from '../assets/image/prototipo.jpeg';
 import protCima from '../assets/image/prot_cima.jpeg';
 
@@ -11,14 +13,42 @@ const atualizacoes = [
     data: '10 de abril de 2026',
     titulo: 'Apresentação do plano do projeto',
     conteudo: 'Apresentamos o plano do projeto para a turma e professores. Foram definidos o escopo, as funcionalidades principais e a arquitetura do sistema.',
+    arquivos: [
+      { href: '/arquivos/Proposta - Plano de Projeto - Equipe Inventario.pdf', label: 'Plano do Projeto' },
+      { href: '/arquivos/Apresentação Proposta.pdf', label: 'Slides' },
+    ],
+    imagens: [
+      { src: diagramaBlocos, alt: 'Diagrama de Blocos' },
+    ],
+  },
+  {
+    data: '17 de Abril de 2026',
+    titulo: 'Apresentação Entregável 1',
+    conteudo: 'Apresentamos o site/blog de acompanhamento do nosso projeto, desenvolvido para que o professor possa acompanhar sua evolução. Nele serão registradas todas as atualizações, etapas de desenvolvimento e principais avanços, servindo como uma documentação contínua do projeto ao longo de sua execução.',
+  },
+  {
+    data: '24 de Abril de 2026',
+    titulo: 'Montagem Inicial em Protoboard',
+    conteudo: 'Fizemos a montagem inicial do circuito em uma protoboard, testando as conexões.',
+    imagens: [
+      { src: montagemProtoboard, alt: 'Montagem em Protoboard' },
+    ],
+  
+  },
+  {
+    data: '01 de Maio de 2026',
+    titulo: 'Desenvolvimento do esquemático físico e testes do sensores',
+    conteudo: 'Desenvolvemos o esquemático da estrutura física do projeto, ademais, testamos os sensores Hx711 e RC522 conectando-os a ESP32, para medir o peso e ler as etiquetas RFID, respectivamente.',
+    imagens: [
+      { src: esquemaDesenhado, alt: 'Esquema desenhado' },
+    ],
   },
   {
     data: '08 de maio de 2026',
-    titulo: 'Desenvolvimento do esquemático físico e eletrônico',
-    conteudo: 'Desenvolvemos o esquemático físico e eletrônico do protótipo, definindo os componentes e a estrutura do circuito. Tamém projetamos a estrutura física para acomodar os componentes eletrônicos.',
+    titulo: 'Desenvolvimento do esquemático eletrônico e criação das tabelas.',
+    conteudo: 'Desenvolvemos o esquemático eletrônico, definindo os componentes e a estrutura do circuito. Ademais, fizemos a instalação do banco de dados e criação das tabelas.',
     imagens: [
-      { src: esquemaDesenhado, alt: 'Esquema desenhado' },
-      { src: schematicOficinas, alt: 'Schematic Oficinas 2' },
+      { src: schematicOficina, alt: 'Schematic Oficina' },
     ],
   },
   {
@@ -29,6 +59,25 @@ const atualizacoes = [
       { src: prototipo, alt: 'Protótipo' },
       { src: protCima, alt: 'Protótipo visto de cima' },
     ],
+  },
+  {
+    data: '22 de Maio de 2026',
+    titulo: 'Apresentação Entregável 2/3',
+    conteudo: 'Apresentamos o design de estrutura do nosso projeto ao professor. O projeto possui uma caixa patola conectada a uma célula de carga, esta conectada com uma chapa de acrílico onde os objetos a serem pesados serão colocados. Ademais, criamos as tabelas e a instalamos os bancos de dados para o gerenciamento dos estoques. Por último, fizemos a apresentação do projeto montado, demonstrando testes de hardware que garantem que os sensores ',
+  },
+  {
+    data: '05 de Junho de 2026',
+    titulo: 'Desenvolvimento da interface visual',
+    conteudo: 'Fizemos a interface visual que integra o controle do estoque pelo banco de dados. Os valores de entrada são inseridos à mão, para depois serem integrados a estrutura mecânica.',
+  },
+  {
+    data: '12 de Junho de 2026',
+    titulo: 'Integração com a API do Mercado Pago',
+    conteudo: 'Fizemos a integração com a API para realizarmos PIX e fazer a venda de itens do estoque.',
+  },
+  {
+    data: '19 de Junho de 2026',
+    titulo: 'Apresentação Entregável 4',
   },
 ];
 ---
@@ -63,6 +112,23 @@ const atualizacoes = [
                       alt={img.alt}
                       class="rounded-lg shadow-sm w-full h-auto object-cover"
                     />
+                  ))}
+                </div>
+              )}
+
+              {item.arquivos && (
+                <div class="flex flex-wrap gap-3 mt-4">
+                  {item.arquivos.map(arquivo => (
+                    <a
+                      href={arquivo.href}
+                      download
+                      class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-indigo-200 bg-indigo-50 text-indigo-700 text-xs font-medium hover:bg-indigo-100 transition-colors"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                      </svg>
+                      {arquivo.label}
+                    </a>
                   ))}
                 </div>
               )}
