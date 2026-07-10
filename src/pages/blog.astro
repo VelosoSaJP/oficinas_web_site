@@ -6,6 +6,14 @@ import schematicOficinas from '../assets/image/Schematic_Oficinas2_2026-05-21.pn
 import prototipo from '../assets/image/prototipo.jpeg';
 import protCima from '../assets/image/prot_cima.jpeg';
 
+// Para adicionar as imagens dos entregáveis 4 e 5:
+//   1. Coloque o arquivo em src/assets/image/
+//   2. Descomente a importação correspondente abaixo
+//   3. No node, troque `imagemPlaceholder: '...'` por
+//      `imagens: [{ src: entregavel4, alt: 'Entregável 4' }]`
+// import entregavel4 from '../assets/image/entregavel4.jpeg';
+// import entregavel5 from '../assets/image/entregavel5.jpeg';
+
 const atualizacoes = [
   {
     data: '10 de abril de 2026',
@@ -29,6 +37,18 @@ const atualizacoes = [
       { src: prototipo, alt: 'Protótipo' },
       { src: protCima, alt: 'Protótipo visto de cima' },
     ],
+  },
+  {
+    data: '19 de junho de 2026',
+    titulo: 'Apresentação do Entregável 4 — Projeto do software e testes de módulos',
+    conteudo: 'Apresentamos o Entregável 4, focado no desenvolvimento do software e nos testes dos módulos individuais. Desenvolvemos a interface visual com atualização em tempo real, implementamos a integração com a API de Pix (geração de PIX dinâmico via QR Code e Copia/Cola), integramos o QR Code à interface do computador e criamos as rotinas de verificação de pagamento e de reversão (rollback) caso o PIX expire.',
+    imagemPlaceholder: 'Adicione aqui o print do entregável 4 (recorte do cronograma / Gantt).',
+  },
+  {
+    data: '03 de julho de 2026',
+    titulo: 'Apresentação do Entregável 5 — Integração mecânica, hardware e software',
+    conteudo: 'Apresentamos o Entregável 5, focado na integração completa entre mecânica, hardware e software. Fixamos os sensores e o ESP32 na estrutura da balança, realizamos o teste integrado (remoção de peça → atualização da UI → geração de Pix), fizemos a calibração fina com as caixas e peças reais, executamos uma bateria de testes de usuário (comportamentos inesperados, falha de internet, remoção da caixa durante o PIX), tratamos os bugs encontrados e fizemos os ajustes finais de usabilidade da interface.',
+    imagemPlaceholder: 'Adicione aqui o print do entregável 5 (recorte do cronograma / Gantt).',
   },
 ];
 ---
@@ -64,6 +84,15 @@ const atualizacoes = [
                       class="rounded-lg shadow-sm w-full h-auto object-cover"
                     />
                   ))}
+                </div>
+              )}
+
+              {item.imagemPlaceholder && (
+                <div class="mt-4 flex h-56 items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 px-4 text-center">
+                  <div>
+                    <p class="text-sm font-medium text-gray-500">Espaço reservado para imagem</p>
+                    <p class="mt-1 text-xs text-gray-400">{item.imagemPlaceholder}</p>
+                  </div>
                 </div>
               )}
             </div>
