@@ -6,19 +6,22 @@ const membros = [
     nome: 'Enzo Westphal Tacla',
     papel: 'Documentação & Integração',
     descricao: 'Responsável pela documentação do projeto, integração das partes e elaboração dos relatórios e apresentações finais.',
-    github: 'https://github.com/',
+    github: 'https://github.com/enzowtacla',
+    email: 'enzotacla@alunos.utfpr.edu.br',
   },
   {
     nome: 'Felipe Dias Peixoto',
     papel: 'Hardware & Firmware',
     descricao: 'Responsável pela integração do ESP32 com o leitor RFID RC522 e a célula de carga HX711, além do firmware em C/C++.',    
-    github: 'https://github.com/felipediaspeixoto',
+    github: 'https://github.com/felip-peixoto',
+    email: 'felipediaspeixoto@alunos.utfpr.edu.br',
   },
   {
     nome: 'João Pedro Veloso',
     papel: 'Frontend & Backend',
     descricao: 'Desenvolvimento da interface web de gerenciamento de inventário e a aplicação backend, banco de dados SQLite e integração com a API do Mercado Pago para pagamentos via Pix.',
     github: 'https://github.com/VelosoSaJP',
+    email: 'joaopedrosa@alunos.utfpr.edu.br',
   },
 ];
 ---
@@ -38,9 +41,13 @@ const membros = [
             <h3 class="font-semibold text-lg text-gray-900">{membro.nome}</h3>
             <p class="text-indigo-600 text-sm font-medium mb-3">{membro.papel}</p>
             <p class="text-gray-600 text-sm mb-4">{membro.descricao}</p>
+            <a href={`mailto:${membro.email}`} class="text-sm text-indigo-600 hover:underline">
+                  {membro.email}
+            </a>
+            <br>
             <a href={membro.github} target="_blank" rel="noopener noreferrer"
                class="text-sm text-gray-500 hover:text-indigo-600 transition-colors">
-              GitHub →
+              GitHub
             </a>
           </div>
         ))}
